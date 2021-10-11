@@ -1,0 +1,29 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: orange;
+}
+
+.navBar--containerLogo {
+}
+.logo {
+  width: 8rem;
+  height: auto;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+.navBar--containerList {
+}
+.containerList--list {
+  list-style: none;
+  display: flex;
+}
+.list--item {
+  text-decoration: none;
+  padding-right: 2rem;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
