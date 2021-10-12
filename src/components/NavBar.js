@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="navBar">
         <div className="navBar--containerLogo">
           <a href="index.html">
-            <img src={logo} className="logo" />
+            <img src={logo} className="logo" alt="logotipo de la marca" />
           </a>
         </div>
         <div className="navBar--containerList">
