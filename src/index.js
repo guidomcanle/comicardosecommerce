@@ -4,10 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
+    <ItemListContainer greeting="Hola Mundo!" />
     <App />
   </React.StrictMode>,
   document.getElementById("root")
