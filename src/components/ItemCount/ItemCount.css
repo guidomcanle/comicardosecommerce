@@ -4,13 +4,15 @@
   align-items: center;
   align-self: flex-start;
   padding: 1rem;
-  margin: 1rem;
+  margin: 3rem;
+  background-color: orange;
+  width: 15rem;
+  height: auto;
 }
 
 .amountItems {
   display: flex;
-  flex-direction: row;
-  margin: 0.5rem;
+  flex-direction: row-reverse;
 }
 .addRemoveButton {
   margin: 1rem;
@@ -25,7 +27,10 @@
 .itemCounter {
   font-size: large;
 }
-
+.stockText {
+  color: rgb(133, 131, 131);
+  font-size: small;
+}
 .toCart {
   color: black;
   background-color: white;

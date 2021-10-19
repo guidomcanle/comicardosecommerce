@@ -16,6 +16,7 @@ const ItemCount = ({ product, stock, initial }) => {
   return (
     <div className="itemCount">
       <h3>{product}</h3>
+      <h4 className="stockText">Stock disponible: {stock}</h4>
       <div className="amountItems">
         <button className="addRemoveButton" onClick={add}>
           +
