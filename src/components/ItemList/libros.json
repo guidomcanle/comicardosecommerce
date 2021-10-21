@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "title": "The dark knight returns",
+    "authors": "FRANK MILLER",
+    "price": 1210,
+    "origin": "Estados Unidos",
+    "img": "img/The dark knight returns.0.jpg"
+  },
+  {
+    "id": 1,
+    "title": "The killing joke",
+    "authors": "ALAN MOORE",
+    "price": 968,
+    "origin": "Estados Unidos",
+    "img": "img/The killing joke.1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "El eternauta",
+    "authors": "HECTOR GERMAN OESTERHELD Y FRANCISCO SOLANO LOPEZ",
+    "price": 847,
+    "origin": "Argentina",
+    "img": "img/el eternauta.2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "El eternauta II",
+    "authors": "HECTOR GERMAN OESTERHELD Y FRANCISCO SOLANO LOPEZ",
+    "price": 726,
+    "origin": "Argentina",
+    "img": "img/el eternauta II.3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Berserk vol.1",
+    "authors": "KENTARO MIURA",
+    "price": 484,
+    "origin": "Japón",
+    "img": "img/berserk vol.1.4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "El último recurso",
+    "authors": "LUBRIO Y KUNDO KRUNCH",
+    "price": 786.5,
+    "origin": "Argentina",
+    "img": "img/el último recurso.5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Los pitufos vol.1",
+    "authors": "PEYO",
+    "price": 968,
+    "origin": "Bélgica",
+    "img": "img/los pitufos vol.1.6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Mauss",
+    "authors": "ART SPIEGELMAN",
+    "price": 907.5,
+    "origin": "Estados Unidos",
+    "img": "img/Mauss.7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Akira Vol.1",
+    "authors": "KATSUHIRO OTOMO",
+    "price": 1452,
+    "origin": "Japón",
+    "img": "img/akira vol.1.8.jpg"
+  }
+]

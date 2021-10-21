@@ -1,0 +1,15 @@
+.itemDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(136, 15, 15);
+  margin: 2rem;
+}
+.itemData {
+  text-align: center;
+  margin-top: 1rem;
+}
+.itemInfo {
+  color: white;
+}
