@@ -5,7 +5,8 @@
     "authors": "FRANK MILLER",
     "price": 1210,
     "origin": "Estados Unidos",
-    "img": "img/The dark knight returns.0.jpg"
+    "img": "img/The dark knight returns.0.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "authors": "ALAN MOORE",
     "price": 968,
     "origin": "Estados Unidos",
-    "img": "img/The killing joke.1.jpg"
+    "img": "img/The killing joke.1.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "authors": "HECTOR GERMAN OESTERHELD Y FRANCISCO SOLANO LOPEZ",
     "price": 847,
     "origin": "Argentina",
-    "img": "img/el eternauta.2.jpg"
+    "img": "img/el eternauta.2.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "authors": "HECTOR GERMAN OESTERHELD Y FRANCISCO SOLANO LOPEZ",
     "price": 726,
     "origin": "Argentina",
-    "img": "img/el eternauta II.3.jpg"
+    "img": "img/el eternauta II.3.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "authors": "KENTARO MIURA",
     "price": 484,
     "origin": "Japón",
-    "img": "img/berserk vol.1.4.jpg"
+    "img": "img/berserk vol.1.4.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 5,
@@ -45,7 +50,8 @@
     "authors": "LUBRIO Y KUNDO KRUNCH",
     "price": 786.5,
     "origin": "Argentina",
-    "img": "img/el último recurso.5.jpg"
+    "img": "img/el último recurso.5.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 6,
@@ -53,7 +59,8 @@
     "authors": "PEYO",
     "price": 968,
     "origin": "Bélgica",
-    "img": "img/los pitufos vol.1.6.jpg"
+    "img": "img/los pitufos vol.1.6.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 7,
@@ -61,7 +68,8 @@
     "authors": "ART SPIEGELMAN",
     "price": 907.5,
     "origin": "Estados Unidos",
-    "img": "img/Mauss.7.jpg"
+    "img": "img/Mauss.7.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 8,
@@ -69,6 +77,7 @@
     "authors": "KATSUHIRO OTOMO",
     "price": 1452,
     "origin": "Japón",
-    "img": "img/akira vol.1.8.jpg"
+    "img": "img/akira vol.1.8.jpg",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 ]
