@@ -1,48 +1,35 @@
 import { useEffect, useState } from "react";
-
+import { useParams } from "react-router";
 import Libros from "../ItemList/libros.json";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Modal from "../Modal/Modal";
-import useModal from "../Modal/useModal";
 
 const ItemDetailContainer = () => {
-  const [libros, setLibros] = useState([]);
+  const { id } = useParams;
+  const [libro, setLibros] = useState([]);
 
-  const getLibros = (libros) =>
+  const getLibros = (libros, id) =>
     new Promise((resolve, reject) => {
       setTimeout(() => {
         if (libros) {
-          resolve(libros);
+          const libro = libros.find((libro) => libro.id === id);
+          console.log(libro);
+          resolve(libro);
         } else {
           reject("No se encontró información");
         }
-      }, 3000);
+      }, 200);
     });
 
   useEffect(() => {
-    getLibros(Libros)
+    getLibros(Libros, Number(id))
       .then((res) => setLibros(res))
       .catch((err) => console.log(err));
-  }, []);
-
-  console.log(libros);
-
-  const [isOpenModal, openModal, closeModal] = useModal(false);
+  }, [id]);
+  console.log(libro);
 
   return (
-    <>
-      <button onClick={openModal}>Más información</button>
-      <Modal isOpen={isOpenModal} closeModal={closeModal}>
-        <div className="itemList">
-          {libros
-            ? libros.map((libro) => {
-                return <ItemDetail key={libro.id} libro={libro} />;
-              })
-            : "Cargando..."}
-        </div>
-      </Modal>
-    </>
+    <>{libro ? <ItemDetail key={libro.id} libro={libro} /> : "Cargando..."}</>
   );
 };
 

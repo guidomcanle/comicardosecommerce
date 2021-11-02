@@ -27,8 +27,8 @@ const ItemList = () => {
   return (
     <>
       <div className="itemList">
-        {libros.map((libros) => (
-          <Item key={libros.id} libros={libros} />
+        {libros.map((Libros) => (
+          <Item key={Libros.id} libros={Libros} />
         ))}
       </div>
     </>

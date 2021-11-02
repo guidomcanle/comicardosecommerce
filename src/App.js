@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -12,7 +13,13 @@ function App() {
           <Navbar />
         </header>
         <Switch>
-          <Route path="/">
+          <Route path="/catalogo/:id">
+            <ItemDetailContainer />
+          </Route>
+          <Route exact path="/catalogo/">
+            <ItemListContainer greeting="Hola Mundo!" />
+          </Route>
+          <Route exact path="/">
             <ItemListContainer greeting="Hola Mundo!" />
           </Route>
         </Switch>

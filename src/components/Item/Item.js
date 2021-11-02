@@ -1,5 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount";
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import { Link } from "react-router-dom";
 import "./Item.css";
 
 const Item = ({ libros }) => {
@@ -12,8 +12,9 @@ const Item = ({ libros }) => {
           <img src={libros.img} alt={libros.title}></img>
           <p className="itemInfo">${libros.price}</p>
         </div>
-
-        <ItemDetailContainer />
+        <Link to={`/catalogo/${libros.id}`}>
+          <button>Detalles</button>
+        </Link>
         <ItemCount stock="9" initial="1" />
       </div>
     </>
