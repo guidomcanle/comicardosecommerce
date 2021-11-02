@@ -5,7 +5,7 @@ import Data from "../ItemList/libros.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams;
+  const { id } = useParams();
   const [libro, setLibro] = useState([]);
 
   const getLibros = (data, id) =>
