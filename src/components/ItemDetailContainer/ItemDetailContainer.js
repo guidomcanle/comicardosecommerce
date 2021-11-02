@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         } else {
           reject("No se encontró información");
         }
-      }, 3000);
+      }, 200);
     });
 
   useEffect(() => {
