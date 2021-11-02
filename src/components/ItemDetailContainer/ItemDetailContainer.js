@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import Libros from "../ItemList/libros.json";
+import { useParams } from "react-router-dom";
+import Data from "../ItemList/libros.json";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams;
-  const [libro, setLibros] = useState([]);
+  const [libro, setLibro] = useState([]);
 
-  const getLibros = (libros, id) =>
+  const getLibros = (data, id) =>
     new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (libros) {
-          const libro = libros.find((libro) => libro.id === id);
-          console.log(libro);
-          resolve(libro);
+        if (data) {
+          const libroBuscado = data.find((libro) => libro.id === id);
+          console.log(libroBuscado);
+          resolve(libroBuscado);
         } else {
           reject("No se encontró información");
         }
-      }, 200);
+      }, 3000);
     });
 
   useEffect(() => {
-    getLibros(Libros, Number(id))
-      .then((res) => setLibros(res))
+    getLibros(Data, Number(id))
+      .then((res) => setLibro(res))
       .catch((err) => console.log(err));
   }, [id]);
   console.log(libro);
