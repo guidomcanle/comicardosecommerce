@@ -12,3 +12,7 @@
 .modal.is-open {
   display: flex;
 }
+
+.modal-close {
+  position: absolute;
+}
