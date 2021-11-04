@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="navBar--containerList">
           <ul className="containerList--list">
             <li className="list--item">
-              <Link to={`/catalogo`} className="link">
+              <Link to={`/`} className="link">
                 Tienda
               </Link>
             </li>

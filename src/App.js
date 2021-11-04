@@ -13,10 +13,10 @@ function App() {
           <Navbar />
         </header>
         <Switch>
-          <Route path="/item/:id">
+          <Route path="/catalogo/:id">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="/catalogo">
+          <Route exact path="/categoria/:categoria">
             <ItemListContainer greeting="Hola Mundo!" />
           </Route>
           <Route exact path="/">
