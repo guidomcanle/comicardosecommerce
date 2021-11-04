@@ -5,6 +5,9 @@
   justify-content: center;
   background-color: rgb(136, 15, 15);
   margin: 2rem;
+  width: 25rem;
+  border-radius: 1rem;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
 }
 .itemData {
   text-align: center;
@@ -12,4 +15,14 @@
 }
 .itemInfo {
   color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.boton--detalles {
+  color: black;
+  background-color: white;
+  border-color: orange;
+  font-size: large;
+  border-radius: 1rem;
+  margin-bottom: -1rem;
 }

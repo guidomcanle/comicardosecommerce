@@ -19,7 +19,7 @@ const ItemList = () => {
         } else {
           reject("No se encontró información");
         }
-      }, 3000);
+      }, 1000);
     });
 
   useEffect(() => {

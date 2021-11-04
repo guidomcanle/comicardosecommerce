@@ -8,6 +8,8 @@
   background-color: orange;
   width: 15rem;
   height: auto;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
 }
 
 .amountItems {
@@ -30,6 +32,7 @@
 .stockText {
   color: rgb(133, 131, 131);
   font-size: small;
+  margin-top: -2rem;
 }
 .toCart {
   color: black;

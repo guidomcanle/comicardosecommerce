@@ -13,7 +13,7 @@ function App() {
           <Navbar />
         </header>
         <Switch>
-          <Route path="/catalogo/:id">
+          <Route path="/libros/:id">
             <ItemDetailContainer />
           </Route>
           <Route exact path="/categoria/:categoria">
