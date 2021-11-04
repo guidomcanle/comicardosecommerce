@@ -3,9 +3,13 @@ import { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import Libros from "./libros.json";
 import "./itemList.css";
+import { useParams } from "react-router";
 
 const ItemList = () => {
   const [libros, setLibros] = useState([]);
+  const { categoria } = useParams();
+
+  console.log(categoria);
 
   const getLibros = (libros) =>
     new Promise((resolve, reject) => {
@@ -20,16 +24,20 @@ const ItemList = () => {
 
   useEffect(() => {
     getLibros(Libros)
-      .then((res) => setLibros(res))
+      .then((res) => {
+        categoria
+          ? setLibros(res.filter((books) => books.categoria === categoria))
+          : setLibros(Libros);
+      })
       .catch((err) => console.log(err));
-  }, []);
+  }, [categoria]);
 
   return (
     <>
       <div className="itemList">
-        {libros.map((Libros) => (
-          <Item key={Libros.id} libros={Libros} />
-        ))}
+        {libros.length
+          ? libros.map((libro) => <Item key={libro.id} libros={libro} />)
+          : "Cargando..."}
       </div>
     </>
   );

@@ -16,22 +16,24 @@ const Navbar = () => {
         <div className="navBar--containerList">
           <ul className="containerList--list">
             <li className="list--item">
-              <Link to="/catalogo/" className="link">
+              <Link to={`/catalogo`} className="link">
                 Tienda
               </Link>
             </li>
             <li className="list--item">
-              <Link to="/sobrenosotros/" className="link">
-                Sobre Nosotros
+              <Link to={`/categoria/historietaargentina`} className="link">
+                Historieta argentina
               </Link>
             </li>
             <li className="list--item">
-              <Link to="/contacto/" className="link">
-                Contacto
+              <Link to={`/categoria/restodelmundo`} className="link">
+                Resto del mundo
               </Link>
             </li>
           </ul>
-          <CartWidget />
+          <Link to={`/cart`} className="link">
+            <CartWidget />
+          </Link>
         </div>
       </nav>
     </>
