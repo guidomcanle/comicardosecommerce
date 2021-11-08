@@ -1,4 +1,3 @@
-import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./Item.css";
 
@@ -15,7 +14,6 @@ const Item = ({ libros }) => {
         <Link to={`/libros/${libros.id}`}>
           <button className="boton--detalles">Detalles</button>
         </Link>
-        <ItemCount stock="9" initial="1" />
       </div>
     </>
   );

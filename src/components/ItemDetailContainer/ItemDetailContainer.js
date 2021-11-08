@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
       setTimeout(() => {
         if (data) {
           const libroBuscado = data.find((libro) => libro.id === id);
-          console.log(libroBuscado);
           resolve(libroBuscado);
         } else {
           reject("No se encontró información");

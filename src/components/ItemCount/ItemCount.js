@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
-import BotonACarrito from "../BotonACarrito/BotonACarrito";
 
-const ItemCount = ({ product, stock, initial }) => {
-  const [itemsInCart, setItemsInCart] = useState(parseInt(initial));
-  const [flag, setFlag] = useState();
+const ItemCount = ({ product, stock, initial, onAdd, id }) => {
+  const [itemsToCart, setItemsToCart] = useState(parseInt(initial));
 
   const add = () => {
-    if (itemsInCart < stock) setItemsInCart(itemsInCart + 1);
+    if (itemsToCart < stock) setItemsToCart(itemsToCart + 1);
     else console.log("No hay más productos");
   };
   const remove = () => {
-    if (itemsInCart > initial) setItemsInCart(itemsInCart - 1);
+    if (itemsToCart > initial) setItemsToCart(itemsToCart - 1);
     else console.log("No pueden ser menos");
   };
 
-  const buttonToCart = () => {
-    setFlag(true);
+  const callBackToItemDetail = () => {
+    onAdd(itemsToCart);
+    console.log(itemsToCart);
   };
 
   return (
@@ -27,15 +26,14 @@ const ItemCount = ({ product, stock, initial }) => {
         <button className="addRemoveButton" onClick={add}>
           +
         </button>
-        <p className="itemCounter">{itemsInCart}</p>
+        <p className="itemCounter">{itemsToCart}</p>
         <button className="addRemoveButton" onClick={remove}>
           -
         </button>
       </div>
-      <button className="toCart" onClick={buttonToCart}>
+      <button className="toCart" onClick={callBackToItemDetail}>
         Agregar a carrito
       </button>
-      {flag && <BotonACarrito />}
     </div>
   );
 };
