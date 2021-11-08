@@ -1,0 +1,15 @@
+.itemInfo--text {
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  color: white;
+}
+.itemArticle--estilos {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(136, 15, 15);
+  margin: 2rem;
+  width: 25rem;
+  border-radius: 1rem;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
+}

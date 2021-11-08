@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
+import BotonACarrito from "../BotonACarrito/BotonACarrito";
 
 const ItemCount = ({ product, stock, initial }) => {
   const [itemsInCart, setItemsInCart] = useState(parseInt(initial));
+  const [flag, setFlag] = useState();
 
   const add = () => {
     if (itemsInCart < stock) setItemsInCart(itemsInCart + 1);
@@ -11,6 +13,10 @@ const ItemCount = ({ product, stock, initial }) => {
   const remove = () => {
     if (itemsInCart > initial) setItemsInCart(itemsInCart - 1);
     else console.log("No pueden ser menos");
+  };
+
+  const buttonToCart = () => {
+    setFlag(true);
   };
 
   return (
@@ -26,7 +32,10 @@ const ItemCount = ({ product, stock, initial }) => {
           -
         </button>
       </div>
-      <button className="toCart">Agregar a carrito</button>
+      <button className="toCart" onClick={buttonToCart}>
+        Agregar a carrito
+      </button>
+      {flag && <BotonACarrito />}
     </div>
   );
 };

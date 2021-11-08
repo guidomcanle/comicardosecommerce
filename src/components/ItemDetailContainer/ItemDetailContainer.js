@@ -29,7 +29,11 @@ const ItemDetailContainer = () => {
   console.log(libro);
 
   return (
-    <>{libro ? <ItemDetail key={libro.id} libro={libro} /> : "Cargando..."}</>
+    <>
+      <div className="itemDetailContainer">
+        {libro ? <ItemDetail key={libro.id} libro={libro} /> : "Cargando..."}
+      </div>
+    </>
   );
 };
 
