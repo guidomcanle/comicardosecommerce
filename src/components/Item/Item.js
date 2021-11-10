@@ -8,7 +8,7 @@ const Item = ({ libros }) => {
         <div className="itemData">
           <p className="itemInfo">{libros.title}</p>
           <p className="itemInfo">{libros.authors}</p>
-          <img src={`../ItemList/img/${libros.img}`} alt={libros.title}></img>
+          <img src={`.../public/img/${libros.img}`} alt={libros.title}></img>
           <p className="itemInfo">${libros.price}</p>
         </div>
         <Link to={`/libros/${libros.id}`}>
