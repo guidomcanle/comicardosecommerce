@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import "./ItemCount.css";
 
 const ItemCount = ({ product, stock, initial, onAdd, id }) => {
-  const [itemsToCart, setItemsToCart] = useState(parseInt(initial));
+  const [quantity, setQuantity] = useState(parseInt(initial));
 
   const add = () => {
-    if (itemsToCart < stock) setItemsToCart(itemsToCart + 1);
+    if (quantity < stock) setQuantity(quantity + 1);
     else console.log("No hay más productos");
   };
   const remove = () => {
-    if (itemsToCart > initial) setItemsToCart(itemsToCart - 1);
+    if (quantity > initial) setQuantity(quantity - 1);
     else console.log("No pueden ser menos");
   };
 
   const callBackToItemDetail = () => {
-    onAdd(itemsToCart);
-    console.log(itemsToCart);
+    onAdd(quantity);
+    console.log(quantity);
   };
 
   return (
@@ -26,7 +26,7 @@ const ItemCount = ({ product, stock, initial, onAdd, id }) => {
         <button className="addRemoveButton" onClick={add}>
           +
         </button>
-        <p className="itemCounter">{itemsToCart}</p>
+        <p className="itemCounter">{quantity}</p>
         <button className="addRemoveButton" onClick={remove}>
           -
         </button>

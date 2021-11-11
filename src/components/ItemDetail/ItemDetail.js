@@ -1,17 +1,18 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import BotonACarrito from "../BotonACarrito/BotonACarrito";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartProvider } from "../../contexts/CartContext/CartContext";
 
 function ItemDetail({ libro }) {
   const [flag, setFlag] = useState(true);
-  const [cart, setCart] = useState(null);
+  const [cartInner, setCartInner] = useState();
 
-  const onAdd = (itemsToCart) => {
+  const onAdd = (quantity) => {
     setFlag(false);
-    setCart(itemsToCart);
+    setCartInner(quantity);
 
-    console.log(itemsToCart);
+    console.log(quantity);
   };
 
   return (
@@ -33,7 +34,7 @@ function ItemDetail({ libro }) {
             onAdd={onAdd}
           ></ItemCount>
         ) : (
-          <BotonACarrito cart={cart} />
+          <BotonACarrito cart={cartInner} />
         )}
       </article>
     </>
