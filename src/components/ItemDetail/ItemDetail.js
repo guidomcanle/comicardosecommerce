@@ -7,11 +7,12 @@ import { CartProvider } from "../../contexts/CartContext/CartContext";
 function ItemDetail({ libro }) {
   const [flag, setFlag] = useState(true);
   const [cartInner, setCartInner] = useState();
+  const { addItem } = useContext(CartProvider);
 
   const onAdd = (quantity) => {
     setFlag(false);
     setCartInner(quantity);
-
+    addItem(libro, quantity);
     console.log(quantity);
   };
 
