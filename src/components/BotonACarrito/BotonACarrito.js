@@ -1,11 +1,13 @@
 import "../BotonACarrito/BotonACarrito.css";
 import { Link } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext/CartContext";
 
 const BotonACarrito = ({ cart }) => {
+  const { clear } = useCart();
+
   return (
     <>
       <div className="itemCount">
-        <h3>Agregó {cart} libros en el carrito</h3>
         <div className="botonTerminarSeguirDiv">
           <Link to={`/`}>
             <button className="botonSeguir">Seguir comprando</button>
@@ -13,6 +15,7 @@ const BotonACarrito = ({ cart }) => {
           <Link to={`/cart`}>
             <button className="botonTerminar">Terminar la compra</button>
           </Link>
+          <button onClick={clear}>borrar todo</button>
         </div>
       </div>
     </>

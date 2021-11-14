@@ -1,19 +1,23 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import BotonACarrito from "../BotonACarrito/BotonACarrito";
-import { useState, useContext } from "react";
-import { CartProvider } from "../../contexts/CartContext/CartContext";
+import { useState } from "react";
+import { useCart } from "../../contexts/CartContext/CartContext";
 
 function ItemDetail({ libro }) {
   const [flag, setFlag] = useState(true);
   const [cartInner, setCartInner] = useState();
-  const { addItem } = useContext(CartProvider);
+  const { addItem, removeItem } = useCart();
 
   const onAdd = (quantity) => {
     setFlag(false);
     setCartInner(quantity);
-    addItem(libro, quantity);
+    addItem({ book: libro, quantity: quantity, id: libro.id });
     console.log(quantity);
+  };
+
+  const onRemove = () => {
+    removeItem({ book: libro, id: libro.id });
   };
 
   return (
@@ -27,6 +31,7 @@ function ItemDetail({ libro }) {
           <p className="itemInfo">${libro.price}</p>
           <p className="itemInfo--text">{libro.info}</p>
         </div>
+        <button onClick={onRemove}>borrar el producto agregado</button>
         {flag ? (
           <ItemCount
             initial={1}
@@ -35,7 +40,7 @@ function ItemDetail({ libro }) {
             onAdd={onAdd}
           ></ItemCount>
         ) : (
-          <BotonACarrito cart={cartInner} />
+          <BotonACarrito cart={cartInner} libro={libro} />
         )}
       </article>
     </>
