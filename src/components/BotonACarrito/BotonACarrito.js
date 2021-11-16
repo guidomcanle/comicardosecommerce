@@ -2,7 +2,7 @@ import "../BotonACarrito/BotonACarrito.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext/CartContext";
 
-const BotonACarrito = ({ cart }) => {
+const BotonACarrito = () => {
   const { clear } = useCart();
 
   return (

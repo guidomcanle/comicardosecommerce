@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import Item from "../Item/Item";
 import Libros from "./libros.json";
 import "./itemList.css";
@@ -8,8 +7,6 @@ import { useParams } from "react-router";
 const ItemList = () => {
   const [libros, setLibros] = useState([]);
   const { categoria } = useParams();
-
-  console.log(categoria);
 
   const getLibros = (libros) =>
     new Promise((resolve, reject) => {

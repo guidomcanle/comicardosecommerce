@@ -25,7 +25,6 @@ const ItemDetailContainer = () => {
       .then((res) => setLibro(res))
       .catch((err) => console.log(err));
   }, [id]);
-  console.log(libro);
 
   return (
     <>

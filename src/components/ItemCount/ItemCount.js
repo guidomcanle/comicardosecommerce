@@ -15,7 +15,6 @@ const ItemCount = ({ product, stock, initial, onAdd, id }) => {
 
   const callBackToItemDetail = () => {
     onAdd(quantity);
-    console.log(quantity);
   };
 
   return (

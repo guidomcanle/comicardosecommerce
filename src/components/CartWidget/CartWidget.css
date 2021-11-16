@@ -1,4 +1,9 @@
+.divCartLogo {
+  display: flex;
+  flex-direction: row;
+}
+
 .carritoLogo {
   width: 2rem;
-  height: auto;
+  height: 2rem;
 }

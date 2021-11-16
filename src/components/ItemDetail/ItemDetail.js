@@ -13,7 +13,6 @@ function ItemDetail({ libro }) {
     setFlag(false);
     setCartInner(quantity);
     addItem({ book: libro, quantity: quantity, id: libro.id });
-    console.log(quantity);
   };
 
   const onRemove = () => {

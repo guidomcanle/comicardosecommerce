@@ -1,0 +1,16 @@
+.cartItemDiv {
+  background-color: rgb(136, 15, 15);
+  margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+}
+.cartItemDiv--box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cartItemDiv--text {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
