@@ -12,7 +12,7 @@ function ItemDetail({ libro }) {
   const onAdd = (quantity) => {
     setFlag(false);
     setCartInner(quantity);
-    addItem({ book: libro, quantity: quantity, id: libro.id });
+    addItem({ book: libro, counter: quantity, id: libro.id });
   };
 
   const onRemove = () => {

@@ -7,17 +7,22 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addItem = (bookToCart) => {
-    const id = bookToCart.id;
-    const isInCart = cart.find((bookToCart) => bookToCart.id === id);
+  const addItem = ({ book, counter, id }) => {
+    setCart((prev) => {
+      const isInCart = prev.find((cart) => cart.id === id);
+      let quantity = counter;
+      console.log(counter);
+      if (isInCart) {
+        return cart.map((currentBook) =>
+          currentBook.id === id
+            ? { book, counter: currentBook.counter + quantity, id: book.id }
+            : currentBook
+        );
+      }
+      return [...prev, { book, counter: quantity, id: book.id }];
+    });
 
-    if (isInCart === undefined) {
-      console.log("addItem");
-      setCart([...cart, bookToCart]);
-    } else {
-      console.log("Ya tiene este libro en el cart");
-      console.log(cart);
-    }
+    console.log(cart);
   };
 
   const removeItem = (bookForRemove) => {
