@@ -1,32 +1,28 @@
 import { useEffect, useState } from "react";
 import Item from "../Item/Item";
-import Libros from "./libros.json";
 import "./itemList.css";
 import { useParams } from "react-router";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { getFirestore } from "../Firebase/index";
 
 const ItemList = () => {
   const [libros, setLibros] = useState([]);
   const { categoria } = useParams();
 
-  const getLibros = (libros) =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (libros) {
-          resolve(libros);
-        } else {
-          reject("No se encontró información");
-        }
-      }, 500);
-    });
-
   useEffect(() => {
-    getLibros(Libros)
-      .then((res) => {
-        categoria
-          ? setLibros(res.filter((books) => books.categoria === categoria))
-          : setLibros(Libros);
-      })
-      .catch((err) => console.log(err));
+    const db = getFirestore();
+    let q = query(collection(db, "items"));
+
+    if (categoria === undefined) {
+      getDocs(q).then((snapshot) => {
+        setLibros(snapshot.docs.map((doc) => doc.data()));
+      });
+    } else {
+      q = query(collection(db, "items"), where("categoria", "==", categoria));
+      getDocs(q).then((snapshot) => {
+        setLibros(snapshot.docs.map((doc) => doc.data()));
+      });
+    }
   }, [categoria]);
 
   return (

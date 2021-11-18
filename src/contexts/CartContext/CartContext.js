@@ -12,6 +12,7 @@ export const CartProvider = ({ children }) => {
       const isInCart = prev.find((cart) => cart.id === id);
       let quantity = counter;
       console.log(counter);
+
       if (isInCart) {
         return cart.map((currentBook) =>
           currentBook.id === id
@@ -31,7 +32,6 @@ export const CartProvider = ({ children }) => {
 
     if (isInCart !== undefined) {
       setCart(cart.filter((bookForRemove) => bookForRemove.id !== id));
-      console.log(cart);
     } else {
       console.log("No está en el carrito este producto");
     }
