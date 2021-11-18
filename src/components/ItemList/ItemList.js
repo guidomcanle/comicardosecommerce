@@ -15,12 +15,20 @@ const ItemList = () => {
 
     if (categoria === undefined) {
       getDocs(q).then((snapshot) => {
-        setLibros(snapshot.docs.map((doc) => doc.data()));
+        setLibros(
+          snapshot.docs.map((doc) => {
+            return { ...doc.data(), id: doc.id };
+          })
+        );
       });
     } else {
       q = query(collection(db, "items"), where("categoria", "==", categoria));
       getDocs(q).then((snapshot) => {
-        setLibros(snapshot.docs.map((doc) => doc.data()));
+        setLibros(
+          snapshot.docs.map((doc) => {
+            return { ...doc.data(), id: doc.id };
+          })
+        );
       });
     }
   }, [categoria]);
