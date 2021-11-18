@@ -1,12 +1,13 @@
 import "./CartItem.css";
 import { useCart } from "../../contexts/CartContext/CartContext";
 
-const Item = ({ books, quantity }) => {
+const CartItem = ({ books, quantity }) => {
   const { removeItem } = useCart();
 
   const onRemove = () => {
     removeItem({ book: books, id: books.id });
   };
+
   return (
     <>
       <div className="cartItemDiv">
@@ -23,4 +24,4 @@ const Item = ({ books, quantity }) => {
   );
 };
 
-export default Item;
+export default CartItem;

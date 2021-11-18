@@ -7,16 +7,12 @@ import { useCart } from "../../contexts/CartContext/CartContext";
 function ItemDetail({ libro }) {
   const [flag, setFlag] = useState(true);
   const [cartInner, setCartInner] = useState();
-  const { addItem, removeItem } = useCart();
+  const { addItem } = useCart();
 
   const onAdd = (quantity) => {
     setFlag(false);
     setCartInner(quantity);
     addItem({ book: libro, counter: quantity, id: libro.id });
-  };
-
-  const onRemove = () => {
-    removeItem({ book: libro, id: libro.id });
   };
 
   return (
@@ -30,7 +26,6 @@ function ItemDetail({ libro }) {
           <p className="itemInfo">${libro.price}</p>
           <p className="itemInfo--text">{libro.info}</p>
         </div>
-        <button onClick={onRemove}>borrar el producto agregado</button>
         {flag ? (
           <ItemCount
             initial={1}

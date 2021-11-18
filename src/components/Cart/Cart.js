@@ -4,7 +4,7 @@ import CartItem from "../CartItem/CartItem";
 import CartEmpty from "../CartEmpty/CartEmpty";
 
 function Cart() {
-  const { cart } = useCart();
+  const { cart, clear } = useCart();
 
   return (
     <>
@@ -14,13 +14,20 @@ function Cart() {
             <CartItem
               key={book.book.id}
               books={book.book}
-              quantity={book.quantity}
+              quantity={book.counter}
             />
           ))
         ) : (
           <CartEmpty />
         )}
       </div>
+      {cart === undefined
+        ? () => (
+            <div>
+              <button onClick={clear}>borrar todo</button>
+            </div>
+          )
+        : ""}
     </>
   );
 }
