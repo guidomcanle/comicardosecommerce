@@ -6,7 +6,7 @@ import Form from "../Form/Form";
 import { useState } from "react/cjs/react.development";
 
 import { getFirestore } from "../Firebase/index";
-import { collection } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 function Cart() {
   const { cart, clear } = useCart();
@@ -17,7 +17,13 @@ function Cart() {
     address: "",
   });
 
-  /*const total = cart.reduce((quantity, x) => quantity + x.price * x.counter, 0);*/
+  const total = cart.reduce(
+    (x, items) => x + items.book.price * items.counter,
+    0
+  );
+  console.log(cart.book);
+
+  console.log(total);
 
   const date = new Date();
   const orderDate = date.toLocaleDateString();
@@ -35,7 +41,7 @@ function Cart() {
         /*total: total,*/
       };
 
-      const results = await orders.add(newOrder);
+      const results = await addDoc(newOrder);
       setUserInfo({
         name: "",
         email: "",
@@ -68,7 +74,7 @@ function Cart() {
           <div className="cartItemDiv">
             <div className="cartItemDiv--box">
               <p className="cartItemDiv--text">total</p>
-              <p className="cartItemDiv--text">{}</p>
+              <p className="cartItemDiv--text">{total}</p>
               <button onClick={clear} className="cartItemDiv--text">
                 borrar todo
               </button>
