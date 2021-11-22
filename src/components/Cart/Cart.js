@@ -21,9 +21,6 @@ function Cart() {
     (x, items) => x + items.book.price * items.counter,
     0
   );
-  console.log(cart.book);
-
-  console.log(total);
 
   const date = new Date();
   const orderDate = date.toLocaleDateString();
