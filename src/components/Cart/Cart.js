@@ -17,28 +17,25 @@ function Cart() {
     address: "",
   });
 
-  const total = cart.reduce(
-    (counter, x) => counter + x.price * cart.counter,
-    0
-  );
+  /*const total = cart.reduce((quantity, x) => quantity + x.price * x.counter, 0);*/
 
   const date = new Date();
   const orderDate = date.toLocaleDateString();
 
   const db = getFirestore();
-  const ordersCollection = collection(db, "orders");
+  const orders = collection(db, "orders");
 
   const handleInputChange = async (event) => {
     try {
       event.preventDefault();
       const newOrder = {
         buyer: userInfo,
-        item: cart,
+        items: cart,
         date: orderDate,
-        /*total: cart.map(),*/
+        /*total: total,*/
       };
 
-      const results = await ordersCollection.add(newOrder);
+      const results = await orders.add(newOrder);
       setUserInfo({
         name: "",
         email: "",
@@ -71,7 +68,7 @@ function Cart() {
           <div className="cartItemDiv">
             <div className="cartItemDiv--box">
               <p className="cartItemDiv--text">total</p>
-              <p className="cartItemDiv--text">{total}</p>
+              <p className="cartItemDiv--text">{}</p>
               <button onClick={clear} className="cartItemDiv--text">
                 borrar todo
               </button>
@@ -80,14 +77,18 @@ function Cart() {
           <div>
             <form onSubmit={handleInputChange}>
               <label for="POST-name">Nombre y apellido:</label>
-              <Form setUserInfo={setUserInfo} name="name" buyer={userInfo} />
+              <Form setUserInfo={setUserInfo} name="name" userInfo={userInfo} />
               <label for="POST-mail">Mail:</label>
-              <Form setUserInfo={setUserInfo} name="mail" buyer={userInfo} />
+              <Form setUserInfo={setUserInfo} name="mail" userInfo={userInfo} />
               <label for="POST-tel">Teléfono</label>
-              <Form setUserInfo={setUserInfo} name="tel" buyer={userInfo} />
+              <Form setUserInfo={setUserInfo} name="tel" userInfo={userInfo} />
               <label for="POST-address">Dirección del envío:</label>
-              <Form setUserInfo={setUserInfo} name="address" buyer={userInfo} />
-              <input type="submit">Enviar</input>
+              <Form
+                setUserInfo={setUserInfo}
+                name="address"
+                userInfo={userInfo}
+              />
+              <button type="submit">Enviar</button>
             </form>
           </div>
         </>

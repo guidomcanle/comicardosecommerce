@@ -1,11 +1,11 @@
-const Form = ({ setUserInfo, buyer, name }) => {
+const Form = ({ setUserInfo, userInfo, name }) => {
   const handleBuyerChange = (event) => {
-    setUserInfo({ ...buyer, [event.target.name]: event.target.value });
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
   };
 
   return (
     <div>
-      <input type="text" value={name} onChange={handleBuyerChange}></input>
+      <input type="text" name={name} onChange={handleBuyerChange} />
     </div>
   );
 };
