@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 /*import Data from "../ItemList/libros.json";*/
 import { getFirestore } from "../Firebase/index";
 import { doc, getDoc } from "firebase/firestore";
+import "./ItemDetailContainer.css";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
 

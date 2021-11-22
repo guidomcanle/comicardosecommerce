@@ -6,6 +6,11 @@ import CartEmpty from "../CartEmpty/CartEmpty";
 function Cart() {
   const { cart, clear } = useCart();
 
+  const total = cart.reduce(
+    (counter, x) => counter + x.price * cart.counter,
+    0
+  );
+
   return (
     <>
       <div>
@@ -21,13 +26,22 @@ function Cart() {
           <CartEmpty />
         )}
       </div>
-      {cart === undefined
-        ? () => (
-            <div>
-              <button onClick={clear}>borrar todo</button>
+
+      {cart.length > 0 ? (
+        <>
+          <div className="cartItemDiv">
+            <div className="cartItemDiv--box">
+              <p className="cartItemDiv--text">total</p>
+              <p className="cartItemDiv--text">{total}</p>
+              <button onClick={clear} className="cartItemDiv--text">
+                borrar todo
+              </button>
             </div>
-          )
-        : ""}
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }

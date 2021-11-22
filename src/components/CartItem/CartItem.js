@@ -15,9 +15,11 @@ const CartItem = ({ books, quantity }) => {
           <p className="cartItemDiv--text">{books.title}</p>
           <p className="cartItemDiv--text">{books.authors}</p>
           <img src={`.../public/img/${books.img}`} alt={books.title}></img>
-          <p className="cartItemDiv--text">${books.price}</p>
-          <p className="cartItemDiv--text">{quantity}</p>
-          <button onClick={onRemove}>borrar el producto agregado</button>
+          <div className="cartItemDiv--box">
+            <p className="cartItemDiv--text">{quantity}</p>
+            <p className="cartItemDiv--text">${books.price}</p>
+            <button onClick={onRemove}>borrar el producto agregado</button>
+          </div>
         </div>
       </div>
     </>

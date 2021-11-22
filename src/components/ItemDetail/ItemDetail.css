@@ -7,6 +7,7 @@
 .itemArticle--estilos {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: rgb(136, 15, 15);
   margin: 2rem;
   width: 25rem;
