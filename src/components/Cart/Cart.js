@@ -26,26 +26,25 @@ function Cart() {
   const orderDate = date.toLocaleDateString();
 
   const db = getFirestore();
-  const orders = collection(db, "orders");
 
   const handleInputChange = async (event) => {
     try {
       event.preventDefault();
-      const newOrder = {
-        buyer: userInfo,
-        items: cart,
-        date: orderDate,
-        /*total: total,*/
-      };
-
-      const results = await addDoc(newOrder);
       setUserInfo({
         name: "",
         email: "",
         tel: "",
         address: "",
       });
+      const results = await addDoc(collection(db, "orders"), {
+        buyer: userInfo,
+        items: cart,
+        date: orderDate,
+        total: total,
+      });
+
       console.log(results);
+      clear();
     } catch (err) {
       console.log(err);
     }
