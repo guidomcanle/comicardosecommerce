@@ -1,17 +1,16 @@
-.botonTerminarSeguirDiv {
+.buttonFinishToDiv {
   display: flex;
-
   flex-direction: row;
 }
 
-.botonTerminar {
+.buttonFinish {
   font-size: smaller;
   color: white;
   background-color: rgb(136, 15, 15);
   border-color: orange;
   border-radius: 1rem;
 }
-.botonSeguir {
+.buttonTo {
   font-size: smaller;
   color: black;
   background-color: white;

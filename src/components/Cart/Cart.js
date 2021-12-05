@@ -4,7 +4,6 @@ import CartItem from "../CartItem/CartItem";
 import CartEmpty from "../CartEmpty/CartEmpty";
 import Form from "../Form/Form";
 import { useState } from "react/cjs/react.development";
-
 import { getFirestore } from "../Firebase/index";
 import { collection, addDoc } from "firebase/firestore";
 
@@ -76,8 +75,8 @@ function Cart() {
               </button>
             </div>
           </div>
-          <div>
-            <form onSubmit={handleInputChange}>
+          <div className="cartItemDiv">
+            <form className="cartItemDiv--form" onSubmit={handleInputChange}>
               <label for="POST-name">Nombre y apellido:</label>
               <Form setUserInfo={setUserInfo} name="name" userInfo={userInfo} />
               <label for="POST-mail">Mail:</label>

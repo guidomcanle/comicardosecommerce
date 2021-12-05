@@ -8,7 +8,7 @@ function CartEmpty() {
         <div className="cartEmptyBox">
           <h3>No hay productos aquí</h3>
           <Link to={`/`}>
-            <button className="botonSeguir">A buscar productos</button>
+            <button className="buttonTo">A buscar productos</button>
           </Link>
         </div>
       </div>

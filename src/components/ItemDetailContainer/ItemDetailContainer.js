@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-/*import Data from "../ItemList/libros.json";*/
 import { getFirestore } from "../Firebase/index";
 import { doc, getDoc } from "firebase/firestore";
 import "./ItemDetailContainer.css";
@@ -9,7 +8,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [libro, setLibro] = useState([]);
+  const [book, setBook] = useState([]);
 
   useEffect(() => {
     const db = getFirestore();
@@ -17,7 +16,7 @@ const ItemDetailContainer = () => {
 
     getDoc(item).then((snapshot) => {
       if (snapshot.exists()) {
-        setLibro(snapshot.data());
+        setBook(snapshot.data());
       }
     });
   }, [id]);
@@ -25,7 +24,7 @@ const ItemDetailContainer = () => {
   return (
     <>
       <div className="itemDetailContainer">
-        {libro ? <ItemDetail key={libro.id} libro={libro} /> : "Cargando..."}
+        {book ? <ItemDetail key={book.id} book={book} /> : "Cargando..."}
       </div>
     </>
   );

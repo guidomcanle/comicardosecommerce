@@ -6,7 +6,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { getFirestore } from "../Firebase/index";
 
 const ItemList = () => {
-  const [libros, setLibros] = useState([]);
+  const [book, setBook] = useState([]);
   const { categoria } = useParams();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const ItemList = () => {
 
     if (categoria === undefined) {
       getDocs(q).then((snapshot) => {
-        setLibros(
+        setBook(
           snapshot.docs.map((doc) => {
             return { ...doc.data(), id: doc.id };
           })
@@ -24,7 +24,7 @@ const ItemList = () => {
     } else {
       q = query(collection(db, "items"), where("categoria", "==", categoria));
       getDocs(q).then((snapshot) => {
-        setLibros(
+        setBook(
           snapshot.docs.map((doc) => {
             return { ...doc.data(), id: doc.id };
           })
@@ -36,8 +36,8 @@ const ItemList = () => {
   return (
     <>
       <div className="itemList">
-        {libros.length
-          ? libros.map((libro) => <Item key={libro.id} libros={libro} />)
+        {book.length
+          ? book.map((book) => <Item key={book.id} book={book} />)
           : "Cargando..."}
       </div>
     </>

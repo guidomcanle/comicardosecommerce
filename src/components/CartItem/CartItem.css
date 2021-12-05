@@ -19,3 +19,8 @@
   height: 8rem;
   width: auto;
 }
+.cartItemDiv--form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
