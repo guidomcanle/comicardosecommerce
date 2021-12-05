@@ -51,7 +51,7 @@ function Cart() {
 
   return (
     <>
-      <div>
+      <div className="cartDiv">
         {cart.length ? (
           cart.map((book) => (
             <CartItem
@@ -63,39 +63,57 @@ function Cart() {
         ) : (
           <CartEmpty />
         )}
-      </div>
-      {cart.length > 0 ? (
-        <>
-          <div className="cartItemDiv">
-            <div className="cartItemDiv--box">
-              <p className="cartItemDiv--text">total</p>
-              <p className="cartItemDiv--text">{total}</p>
-              <button onClick={clear} className="cartItemDiv--text">
-                borrar todo
-              </button>
+
+        {cart.length > 0 ? (
+          <>
+            <div className="cartItemDiv">
+              <div className="cartItemDiv--box">
+                <p className="cartItemDiv--text">total</p>
+                <p className="cartItemDiv--text">${total}</p>
+                <button onClick={clear} className="cartItemDiv--text buttonTo">
+                  borrar todo
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="cartItemDiv">
-            <form className="cartItemDiv--form" onSubmit={handleInputChange}>
-              <label for="POST-name">Nombre y apellido:</label>
-              <Form setUserInfo={setUserInfo} name="name" userInfo={userInfo} />
-              <label for="POST-mail">Mail:</label>
-              <Form setUserInfo={setUserInfo} name="mail" userInfo={userInfo} />
-              <label for="POST-tel">Teléfono</label>
-              <Form setUserInfo={setUserInfo} name="tel" userInfo={userInfo} />
-              <label for="POST-address">Dirección del envío:</label>
-              <Form
-                setUserInfo={setUserInfo}
-                name="address"
-                userInfo={userInfo}
-              />
-              <button type="submit">Enviar</button>
-            </form>
-          </div>
-        </>
-      ) : (
-        ""
-      )}
+            <div className="cartItemDiv__form">
+              <form
+                className="cartItemDiv__form--styles"
+                onSubmit={handleInputChange}
+              >
+                <label for="POST-name">Nombre y apellido:</label>
+                <Form
+                  setUserInfo={setUserInfo}
+                  name="name"
+                  userInfo={userInfo}
+                />
+                <label for="POST-mail">Mail:</label>
+                <Form
+                  setUserInfo={setUserInfo}
+                  name="mail"
+                  userInfo={userInfo}
+                />
+                <label for="POST-tel">Teléfono</label>
+                <Form
+                  setUserInfo={setUserInfo}
+                  name="tel"
+                  userInfo={userInfo}
+                />
+                <label for="POST-address">Dirección del envío:</label>
+                <Form
+                  setUserInfo={setUserInfo}
+                  name="address"
+                  userInfo={userInfo}
+                />
+                <button type="submit" className="buttonTo">
+                  Comprar
+                </button>
+              </form>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+      </div>
     </>
   );
 }

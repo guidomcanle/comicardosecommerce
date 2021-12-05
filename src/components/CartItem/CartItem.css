@@ -4,23 +4,34 @@
   border-radius: 1rem;
   box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
   color: aliceblue;
+  width: 80%;
 }
 .cartItemDiv--box {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 .cartItemDiv--text {
   margin-left: 2rem;
   margin-right: 2rem;
-  max-width: 10rem;
+  max-width: 12.5%;
 }
 .cartItemImg {
   height: 8rem;
   width: auto;
+  max-width: 12.5%;
 }
-.cartItemDiv--form {
+.cartItemDiv__form {
+  background-color: rgb(136, 15, 15);
+  margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 5px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+}
+.cartItemDiv__form--styles {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
 }

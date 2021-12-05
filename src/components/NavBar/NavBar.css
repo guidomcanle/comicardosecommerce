@@ -1,12 +1,12 @@
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: orange;
 }
 
-.navBar--containerLogo {
-}
 .logo {
   width: 8rem;
   height: auto;

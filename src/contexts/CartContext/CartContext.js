@@ -11,8 +11,6 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => {
       const isInCart = prev.find((cart) => cart.id === id);
       let quantity = counter;
-      console.log(counter);
-
       if (isInCart) {
         return cart.map((currentBook) =>
           currentBook.id === id
@@ -22,14 +20,12 @@ export const CartProvider = ({ children }) => {
       }
       return [...prev, { book, counter: quantity, id: book.id }];
     });
-
     console.log(cart);
   };
 
   const removeItem = (bookForRemove) => {
     const id = bookForRemove.id;
     const isInCart = cart.find((bookForRemove) => bookForRemove.id === id);
-
     if (isInCart !== undefined) {
       setCart(cart.filter((bookForRemove) => bookForRemove.id !== id));
     } else {
@@ -38,14 +34,44 @@ export const CartProvider = ({ children }) => {
     console.log(id);
   };
 
-  const clear = () => {
+  const addOneItem = (book) => {
+    const isInCart = cart.find((product) => product.id === book.id);
+    if (isInCart) {
+      setCart(
+        cart.map((product) =>
+          product.id === book.id
+            ? { ...isInCart, counter: isInCart.counter + 1 }
+            : product
+        )
+      );
+    }
+  };
+
+  const removeOneItem = (book) => {
+    const isInCart = cart.find((product) => product.id === book.id);
+    if (isInCart.counter === 1) {
+      setCart(cart.filter((product) => product.id !== book.id));
+    } else {
+      setCart(
+        cart.map((product) =>
+          product.id === book.id
+            ? { ...isInCart, counter: isInCart.counter - 1 }
+            : product
+        )
+      );
+    }
+  };
+
+  const clear = (book) => {
     setCart([]);
   };
 
   useEffect(() => console.log(cart));
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clear, addOneItem, removeOneItem }}
+    >
       {children}
     </CartContext.Provider>
   );
