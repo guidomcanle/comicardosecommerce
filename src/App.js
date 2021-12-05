@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./contexts/CartContext/CartContext";
 import Cart from "./components/Cart/Cart";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
               <Cart greeting="" />
             </Route>
           </Switch>
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </BrowserRouter>
     </CartProvider>

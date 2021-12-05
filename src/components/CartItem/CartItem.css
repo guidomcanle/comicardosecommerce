@@ -15,3 +15,7 @@
   margin-right: 2rem;
   max-width: 10rem;
 }
+.cartItemImg {
+  height: 8rem;
+  width: auto;
+}

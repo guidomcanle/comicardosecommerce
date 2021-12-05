@@ -1,0 +1,26 @@
+footer {
+  background-color: rgb(209, 208, 208);
+  border-radius: 1rem 10rem 3rem 10rem;
+  padding: 0rem 2rem 1rem 2rem;
+  margin-top: 1rem;
+}
+.footer__leyenda {
+  font-size: 1.7vh;
+  font-weight: 700;
+}
+.footer__acciones {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__acciones__divIcons--icons {
+  height: 3vh;
+  width: auto;
+}
+.footer__acciones__text {
+  font-size: 1.4vh;
+}
+div p {
+  font-size: small;
+}

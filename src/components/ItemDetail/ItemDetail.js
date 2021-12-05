@@ -22,7 +22,7 @@ function ItemDetail({ libro }) {
           <p className="itemInfo">{libro.title}</p>
           <p className="itemInfo">{libro.authors}</p>
           <p className="itemInfo">{libro.origin}</p>
-          <img src={libro.img} alt={libro.title}></img>
+          <img src={libro.img} alt={libro.title} className="itemImg"></img>
           <p className="itemInfo">${libro.price}</p>
           <p className="itemInfo--text">{libro.info}</p>
         </div>

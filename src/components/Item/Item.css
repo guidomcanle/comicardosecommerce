@@ -26,3 +26,7 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+.itemImg {
+  height: 15rem;
+  width: auto;
+}

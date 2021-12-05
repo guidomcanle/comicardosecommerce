@@ -14,7 +14,11 @@ const CartItem = ({ books, quantity }) => {
         <div className="cartItemDiv--box">
           <p className="cartItemDiv--text">{books.title}</p>
           <p className="cartItemDiv--text">{books.authors}</p>
-          <img src={`.../public/img/${books.img}`} alt={books.title}></img>
+          <img
+            src={`${books.img}`}
+            alt={books.title}
+            className="cartItemImg"
+          ></img>
           <div className="cartItemDiv--box">
             <p className="cartItemDiv--text">{quantity}</p>
             <p className="cartItemDiv--text">${books.price}</p>
