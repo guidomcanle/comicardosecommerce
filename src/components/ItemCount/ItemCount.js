@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ product, stock, initial, onAdd, id }) => {
+const ItemCount = ({ product, stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(parseInt(initial));
 
   const add = () => {

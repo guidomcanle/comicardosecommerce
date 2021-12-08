@@ -5,7 +5,7 @@ import CartEmpty from "../CartEmpty/CartEmpty";
 import Form from "../Form/Form";
 import { useState } from "react/cjs/react.development";
 import { getFirestore } from "../Firebase/index";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 
 function Cart() {
   const { cart, clear } = useCart();
@@ -47,6 +47,12 @@ function Cart() {
     } catch (err) {
       console.log(err);
     }
+
+    cart.forEach((items) => {
+      const bookRef = doc(db, "items", items.book.id);
+      console.log(items.book.id, items.book.stock, items.counter);
+      updateDoc(bookRef, { stock: items.book.stock - items.counter });
+    });
   };
 
   return (
@@ -80,25 +86,25 @@ function Cart() {
                 className="cartItemDiv__form--styles"
                 onSubmit={handleInputChange}
               >
-                <label for="POST-name">Nombre y apellido:</label>
+                <label>Nombre y apellido:</label>
                 <Form
                   setUserInfo={setUserInfo}
                   name="name"
                   userInfo={userInfo}
                 />
-                <label for="POST-mail">Mail:</label>
+                <label>Mail:</label>
                 <Form
                   setUserInfo={setUserInfo}
                   name="mail"
                   userInfo={userInfo}
                 />
-                <label for="POST-tel">Teléfono</label>
+                <label>Teléfono</label>
                 <Form
                   setUserInfo={setUserInfo}
                   name="tel"
                   userInfo={userInfo}
                 />
-                <label for="POST-address">Dirección del envío:</label>
+                <label>Dirección del envío:</label>
                 <Form
                   setUserInfo={setUserInfo}
                   name="address"

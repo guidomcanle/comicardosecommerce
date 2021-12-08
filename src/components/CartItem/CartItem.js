@@ -8,7 +8,7 @@ const CartItem = ({ books, quantity }) => {
     removeItem({ book: books, id: books.id });
   };
   const onAddOneItem = () => {
-    addOneItem({ book: books, id: books.id });
+    if (quantity < books.stock) addOneItem({ book: books, id: books.id });
   };
   const onRemoveOneItem = () => {
     removeOneItem({ book: books, id: books.id });
@@ -26,19 +26,20 @@ const CartItem = ({ books, quantity }) => {
             className="cartItemImg"
           ></img>
           <div className="cartItemDiv--box">
-            <p className="cartItemDiv--text">{quantity}</p>
+            <p className="cartItemDiv--text">Stock: {books.stock}</p>
+            <p className="cartItemDiv--text">Cantidad: {quantity}</p>
             <p className="cartItemDiv--text">${books.price}</p>
-            <button
-              onClick={onAddOneItem}
-              className="cartItemDiv--text buttonTo"
-            >
-              +
-            </button>
             <button
               onClick={onRemoveOneItem}
               className="cartItemDiv--text buttonTo"
             >
               -
+            </button>
+            <button
+              onClick={onAddOneItem}
+              className="cartItemDiv--text buttonTo"
+            >
+              +
             </button>
             <button onClick={onRemove} className="cartItemDiv--text buttonTo">
               borrar el producto

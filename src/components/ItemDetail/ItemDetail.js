@@ -29,7 +29,7 @@ function ItemDetail({ book }) {
         {flag ? (
           <ItemCount
             initial={1}
-            stock={9}
+            stock={book.stock}
             id={book.id}
             onAdd={onAdd}
           ></ItemCount>
