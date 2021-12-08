@@ -53,6 +53,10 @@ function Cart() {
       console.log(items.book.id, items.book.stock, items.counter);
       updateDoc(bookRef, { stock: items.book.stock - items.counter });
     });
+
+    alert(
+      "Le estaremos enviando por mail los pasos a seguir. Cualquier inconveniente, contactarse con nosotros por nuestra casilla de mails."
+    );
   };
 
   return (
