@@ -10,3 +10,9 @@ La página web aquí presente es un proyecto de una tienda especializada en libr
  - Entre otras más.
 
 Se ha utilizado Firebase como base de datos. Todos los derechos de las imágenes son reservadas a sus autores.
+
+Creador:
+
+ - Soy Guido Matías Canle, estudiante de la carrera de programación de Coderhouse y licenciado en psicología egresado de la UBA.
+ - Mi github es https://github.com/guidomcanle y pueden contactarme enviándome un mail a guidocanle@gmail.com
+
